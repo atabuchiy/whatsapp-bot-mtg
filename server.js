@@ -23,7 +23,7 @@ client.on('message', async (message) => {
       if(scryfall){
          for (const element of r) {
             let detalle = scryfall.find((carta) => {
-               if (carta.card_faces){
+               if (carta.card_faces && !element.includes(' // ')){
                   let caras = carta.name.split(' // ');
                   for (const caraName of caras) {
                      if(caraName.toUpperCase() === element.toUpperCase()){
